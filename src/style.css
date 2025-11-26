@@ -18,3 +18,24 @@ svg {
 	stroke-width: 1;
 	stroke-linecap: round;
 }
+
+.glow {
+	stroke: white;
+	stroke-width: 2.5;
+	filter: blur(0.5px);
+	opacity: 0.8;
+	transition: opacity 0.2s ease;
+	animation: pulse 4s ease infinite;
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 0.3;
+	}
+	50% {
+		opacity: 0.8;
+	}
+	100% {
+		opacity: 0.3;
+	}
+}

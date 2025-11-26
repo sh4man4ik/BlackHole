@@ -44,6 +44,20 @@ function redrawLines() {
 		line.setAttribute('y1', screenY);
 		line.setAttribute('x2', x2);
 		line.setAttribute('y2', y2);
+
+		let glow = other.glow;
+
+		if (!other.glow) {
+			glow = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+			glow.setAttribute('class', 'glow');
+			g.appendChild(glow);
+			other.glow = glow;
+		}
+
+		glow.setAttribute('x1', screenX);
+		glow.setAttribute('y1', screenY);
+		glow.setAttribute('x2', x2);
+		glow.setAttribute('y2', y2);
 	});
 }
 
@@ -80,7 +94,7 @@ function updateOthers(fromId, data) {
 	let item = others.get(fromId);
 
 	if (!item) {
-		item = { centerX: data.centerX, centerY: data.centerY, line: null };
+		item = { centerX: data.centerX, centerY: data.centerY, line: null, glow: null };
 		others.set(fromId, item);
 	} else {
 		item.centerX = data.centerX;
@@ -96,11 +110,15 @@ function removeOther(otherId) {
 			item.line.remove();
 		}
 
+		if (item.glow) {
+			item.glow.remove();
+		}
+
 		others.delete(otherId);
 	}
 }
 
-function setinitialOthers() {
+function setInitialOthers() {
 	for (let i = 0; i < localStorage.length; i++) {
 		let key = localStorage.key(i);
 
@@ -144,7 +162,7 @@ window.addEventListener('storage', (event) => {
 });
 
 myCenter = computeMyCenterOnScreen();
-setinitialOthers();
+setInitialOthers();
 announceSelf();
 redrawLines();
 requestAnimationFrame(frame);
