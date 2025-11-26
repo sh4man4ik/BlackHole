@@ -3,6 +3,8 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	display: flex;
+	justify-content: center;
 	background-color: black;
 }
 
@@ -11,31 +13,55 @@ svg {
 	inset: 0;
 	width: 100vw;
 	height: 100vh;
+	z-index: 0;
 }
 
 .line {
-	stroke: white;
+	stroke: rgba(0, 0, 0, 0);
 	stroke-width: 1;
 	stroke-linecap: round;
+	z-index: 0;
 }
 
 .glow {
 	stroke: white;
 	stroke-width: 2.5;
-	filter: blur(0.5px);
+	filter: blur(3px);
 	opacity: 0.8;
 	transition: opacity 0.2s ease;
 	animation: pulse 4s ease infinite;
+	z-index: 0;
 }
 
 @keyframes pulse {
 	0% {
-		opacity: 0.3;
+		opacity: 0.5;
 	}
 	50% {
 		opacity: 0.8;
 	}
 	100% {
-		opacity: 0.3;
+		opacity: 0.5;
+	}
+}
+
+.hole {
+	max-width: 200px;
+	width: 40vw;
+	aspect-ratio: 1 / 1;
+	background-color: black;
+	border-radius: 50%;
+	box-shadow: 1px 0px 15vw white;
+	animation: shadow 1s infinite alternate;
+	z-index: 1;
+	align-self: center;
+}
+
+@keyframes shadow {
+	0% {
+		box-shadow: 1px 0px 15vw white;
+	}
+	100% {
+		box-shadow: 1px 0px 20vw white;
 	}
 }
