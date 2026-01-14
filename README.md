@@ -12,33 +12,33 @@ The website can be accessed at https://black-hole-effect.netlify.app
 
 # Source Code
 
-Clone the repository:
+1. Clone the repository:
 
 ```
 git clone https://github.com/sh4man4ik/BlackHole.git
 ```
 
-Go to the directory:
+2. Go to the directory:
 
 ```
 cd BlackHole
 ```
 
-Download the dependencies:
+3. Download the dependencies:
 
 ```
 npm install
 ```
 
-Launch the website:
+4. Launch the website:
 
 ```'
 npm run dev
 ```
 
-# Technology
+# Tech stack
 
-The following technologies are used to develop the website: _JavaScript_, _HTML_, _CSS_, _Vite_.
+The following technologies are used to develop the website: **JavaScript**, **HTML**, **CSS**, **Vite** and **Node.js**.
 
 # Facts about the website
 
