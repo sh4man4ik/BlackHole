@@ -32,7 +32,7 @@ npm install
 
 4. Launch the website:
 
-```'
+```
 npm run dev
 ```
 
