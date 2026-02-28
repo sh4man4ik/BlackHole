@@ -8,7 +8,7 @@ This is a website with a black hole effect, where a line is formed between them 
 
 # Quick Start
 
-The website can be accessed at https://black-hole-effect.netlify.app
+The website can be accessed at https://black-hole-effect.vercel.app
 
 # Source Code
 
